@@ -1,4 +1,4 @@
-# WITECH - IT Software Tech & Solutions
+# Mangalaam - Global NextGen
 
 A modern, responsive website for an IT solutions company built with cutting-edge web technologies.
 
