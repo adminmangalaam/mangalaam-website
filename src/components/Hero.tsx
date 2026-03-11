@@ -65,7 +65,7 @@ export default function Hero() {
                     <p className="font-semibold mb-2 uppercase text-white">
                       {sliderItem.smallTitle}
                     </p>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gold">
+                    <h1 className="text-4xl md:text-7xl font-bold mb-6 text-gold">
                       {sliderItem.mainTitle}
                     </h1>
                     <p className="text-gray-300 mb-8 text-lg max-w-2xl mx-auto">
