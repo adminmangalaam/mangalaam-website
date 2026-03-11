@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { submitContactRequestAsync } from "../store/slices/contactUsSlice";
+import { useSelector, useDispatch } from "react-redux";
+import type { AppDispatch, RootState } from "../store";
 
 export default function Contact() {
+  const dispatch = useDispatch<AppDispatch>();
+  const contactUsState = useSelector((state: RootState) => state.contactUs);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,19 +24,26 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    await dispatch(submitContactRequestAsync(formData));
     setFormData({ name: "", email: "", subject: "", message: "" });
-    alert("Thank you for your message! We will get back to you soon.");
   };
 
   return (
     <div>
-      <div className="bg-dark text-white py-16">
+      <div className="text-white py-16 relative">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-gray-400 text-lg">
+          <div
+            className="absolute top-0 left-0 w-full h-full z-1"
+            style={{
+              backgroundImage: `linear-gradient(to bottom,rgb(253, 185, 19), transparent )`,
+            }}
+          />
+          <h1 className="text-black text-5xl font-bold mb-4 relative z-2">
+            Contact Us
+          </h1>
+          <p className="text-gray-500 text-lg relative z-2">
             We'd love to hear from you. Let's get in touch!
           </p>
         </div>
@@ -48,7 +61,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-bold mb-2">Address</h3>
                     <p className="text-gray-600">
-                      123 Tech Street, San Francisco, CA 94105, USA
+                      Ichalkaranji, Maharashtra, INDIA - 416115
                     </p>
                   </div>
                 </div>
@@ -57,7 +70,7 @@ export default function Contact() {
                   <div className="text-gold text-3xl">📞</div>
                   <div>
                     <h3 className="font-bold mb-2">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">(+91) 8856078956</p>
                   </div>
                 </div>
 
@@ -65,7 +78,7 @@ export default function Contact() {
                   <div className="text-gold text-3xl">📧</div>
                   <div>
                     <h3 className="font-bold mb-2">Email</h3>
-                    <p className="text-gray-600">info@witech.com</p>
+                    <p className="text-gray-600">admin@mangalaam.com</p>
                   </div>
                 </div>
 
@@ -84,6 +97,12 @@ export default function Contact() {
 
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
+                {contactUsState.error && (
+                  <p className="text-red-500">{contactUsState.error}</p>
+                )}
+                {contactUsState.success && (
+                  <p className="text-green-500">Message sent successfully!</p>
+                )}
                 <div>
                   <label className="block font-semibold mb-2">Name</label>
                   <input
@@ -138,8 +157,9 @@ export default function Contact() {
                 <button
                   type="submit"
                   className="w-full bg-gold text-dark px-8 py-3 rounded font-semibold hover:bg-yellow-400 transition"
+                  disabled={contactUsState.loading}
                 >
-                  Send Message
+                  {contactUsState.loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
