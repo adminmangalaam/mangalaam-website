@@ -12,6 +12,8 @@ const initialState: contactUsStateTypes = {
   success: false,
 };
 
+const URL = import.meta.env.VITE_API_URL || "http://localhost:3005";
+
 export const submitContactRequestAsync = createAsyncThunk(
   "contactUs/submitContactRequest",
   async (contactData: {
@@ -19,8 +21,9 @@ export const submitContactRequestAsync = createAsyncThunk(
     email: string;
     subject: string;
     message: string;
+    captchaValue: string | null;
   }) => {
-    const response = await fetch("/api/contact", {
+    const response = await fetch(`${URL}/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
