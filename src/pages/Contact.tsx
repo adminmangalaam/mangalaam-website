@@ -1,9 +1,17 @@
+import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 import { submitContactRequestAsync } from "../store/slices/contactUsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import type { AppDispatch, RootState } from "../store";
 
 export default function Contact() {
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+
+  const handleCaptchaChange = (value: string | null) => {
+    console.log("Captcha value:", value);
+    setCaptchaValue(value);
+  };
+
   const dispatch = useDispatch<AppDispatch>();
   const contactUsState = useSelector((state: RootState) => state.contactUs);
 
@@ -26,7 +34,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await dispatch(submitContactRequestAsync(formData));
+    await dispatch(submitContactRequestAsync({ ...formData, captchaValue }));
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -153,6 +161,15 @@ export default function Contact() {
                     placeholder="Your message"
                   />
                 </div>
+
+                <ReCAPTCHA
+                  sitekey={
+                    import.meta.env.DEV
+                      ? import.meta.env.VITE_LOCAL_SITE_KEY
+                      : import.meta.env.VITE_SITE_KEY
+                  }
+                  onChange={handleCaptchaChange}
+                />
 
                 <button
                   type="submit"
