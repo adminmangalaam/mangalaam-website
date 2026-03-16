@@ -1,3 +1,11 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import webDevelopmentIcon from "../assets/web-development.png";
+import digitalMarketingIcon from "../assets/digital-marketing.png";
+import appAnalyticsIcon from "../assets/seo.png";
+import cloudSolutionsIcon from "../assets/cloud-solutions.png";
+import cyberSecurityIcon from "../assets/cyber-security.png";
+
 export default function ServicesPage() {
   const services = [
     {
@@ -10,7 +18,7 @@ export default function ServicesPage() {
         "Fast Performance",
         "Security Focused",
       ],
-      icon: "🌐",
+      icon: webDevelopmentIcon,
     },
     {
       name: "Digital Marketing",
@@ -22,7 +30,7 @@ export default function ServicesPage() {
         "Content Marketing",
         "PPC Campaigns",
       ],
-      icon: "📱",
+      icon: digitalMarketingIcon,
     },
     {
       name: "App Analytics",
@@ -34,7 +42,7 @@ export default function ServicesPage() {
         "Data Visualization",
         "Custom Reports",
       ],
-      icon: "📊",
+      icon: appAnalyticsIcon,
     },
     {
       name: "Cloud Solutions",
@@ -46,16 +54,42 @@ export default function ServicesPage() {
         "Backup & Recovery",
         "24/7 Support",
       ],
-      icon: "☁️",
+      icon: cloudSolutionsIcon,
+    },
+    {
+      name: "Cyber Security",
+      description:
+        "Protect your digital assets with our comprehensive cyber security solutions.",
+      features: [
+        "Threat Detection",
+        "Data Encryption",
+        "Security Audits",
+        "Incident Response",
+      ],
+      icon: cyberSecurityIcon,
     },
   ];
 
+  const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(0);
+  const handleToggle = (index: number) => {
+    console.log("Toggling service index:", index);
+    setOpenServiceIndex(index === openServiceIndex ? null : index);
+  };
+
   return (
     <div>
-      <div className="bg-dark text-white py-16">
+      <div className="text-white py-16 relative">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-gray-400 text-lg">
+          <div
+            className="absolute top-0 left-0 w-full h-full z-1"
+            style={{
+              backgroundImage: `linear-gradient(to bottom,rgb(253, 185, 19), transparent )`,
+            }}
+          />
+          <h1 className="text-black text-5xl font-bold mb-4 relative z-2">
+            Our Services
+          </h1>
+          <p className="text-gray-500 text-lg relative z-2">
             Comprehensive technology solutions tailored to your needs
           </p>
         </div>
@@ -63,23 +97,55 @@ export default function ServicesPage() {
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="gap-8">
             {services.map((service) => (
               <div
                 key={service.name}
-                className="border border-gray-300 rounded-lg p-8 hover:shadow-lg transition"
+                className="border border-gray-300 rounded-lg p-8 hover:shadow-lg transition mb-8 mx-auto w-[75%]"
               >
-                <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold mb-3">{service.name}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <span className="text-gold">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div
+                  className="service-top-container flex items-center justify-between cursor-pointer"
+                  onClick={() => handleToggle(services.indexOf(service))}
+                >
+                  <div className="flex items-center gap-6">
+                    <img
+                      src={service.icon}
+                      alt={service.name}
+                      className="w-16 h-16"
+                    />
+                    <h3 className="text-2xl font-bold">{service.name}</h3>
+                  </div>
+                  <span>
+                    {openServiceIndex === services.indexOf(service) ? (
+                      <div className="w-0 h-0 border-x-transparent border-t-transparent border-b-gray-500 border-8"></div>
+                    ) : (
+                      <div className="w-0 h-0 border-x-transparent border-b-transparent border-t-gray-900 border-8"></div>
+                    )}
+                  </span>
+                </div>
+                <div
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    openServiceIndex === services.indexOf(service)
+                      ? "max-h-96 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  {/* Your content here */}
+                  <p className="text-gray-600 mt-4">{service.description}</p>
+                  {service.features && (
+                    <ul className="mt-4 text-gray-600">
+                      {service.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-center gap-2 mb-2"
+                        >
+                          <span className="text-gold">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -92,9 +158,12 @@ export default function ServicesPage() {
           <p className="mb-8">
             Let's talk about how we can help your business grow.
           </p>
-          <button className="bg-dark text-gold px-8 py-3 rounded font-semibold hover:bg-dark/80 transition">
+          <Link
+            to="/contact"
+            className="bg-dark text-gold px-8 py-3 rounded font-semibold hover:bg-dark/80 transition"
+          >
             Contact Us Today
-          </button>
+          </Link>
         </div>
       </div>
     </div>
