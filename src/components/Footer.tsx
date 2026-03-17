@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark text-white py-12">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="font-bold mb-4">About Us</h3>
             <p className="text-gray-400">
@@ -13,7 +13,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div style={{ display: "none" }}>
+          <div>
             <h3 className="font-bold mb-4">Services</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -34,7 +34,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="text-center">
+          <div className="">
             <h3 className="font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -61,13 +61,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="text-right">
+          <div className="">
             <h3 className="font-bold mb-4">Contact</h3>
             <a
-              href="mailto:connect@mangalaam.com"
+              href="mailto:admin@mangalaam.co.in"
               className="text-gold mb-2 hover:text-gold transition"
             >
-              connect@mangalaam.com
+              admin@mangalaam.co.in
             </a>
             <p className="text-gray-400">+91 9545905268</p>
           </div>
@@ -75,8 +75,9 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>&copy; 2026 Mangalaam. All rights reserved.</p>
-          <p className="text-[12px] mt-5 text-gold">
-            Designed & developed by an-IT-MONK
+          <p className="text-[12px] mt-5 text-gray-500">
+            Designed & developed by{" "}
+            <span className="text-gold">an-IT-MONK</span>
           </p>
         </div>
       </div>
