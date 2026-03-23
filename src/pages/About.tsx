@@ -30,9 +30,9 @@ export default function About() {
     <div>
       <div className="bg-dark text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-4">About WITECH</h1>
+          <h1 className="text-5xl font-bold mb-4">About Mangalaam Global</h1>
           <p className="text-gray-400 text-lg">
-            Leading provider of IT solutions since 2015
+            Leading provider of IT solutions since 2025
           </p>
         </div>
       </div>
@@ -43,9 +43,9 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-gray-600 mb-4">
-                Founded in 2015, WITECH has been at the forefront of digital
-                innovation, helping businesses transform their operations
-                through cutting-edge technology solutions.
+                Founded in 2025, Mangalaam Global has been at the forefront of
+                digital innovation, helping businesses transform their
+                operations through cutting-edge technology solutions.
               </p>
               <p className="text-gray-600 mb-4">
                 Our team of experienced professionals is dedicated to delivering

@@ -113,7 +113,9 @@ export default function ServicesPage() {
                       alt={service.name}
                       className="w-16 h-16"
                     />
-                    <h3 className="text-2xl font-bold">{service.name}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold">
+                      {service.name}
+                    </h3>
                   </div>
                   <span>
                     {openServiceIndex === services.indexOf(service) ? (
