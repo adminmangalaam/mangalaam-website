@@ -63,9 +63,13 @@ export default function Services() {
           Our Services
         </h2>
         <p className="text-center text-gray-500 mb-12 md:w-[600px] mx-auto">
-          Comprehensive technology solutions tailored to your needs.
-          Comprehensive technology solutions tailored to your needs.
-          Comprehensive technology solutions tailored to your needs.
+          We deliver innovative IT solutions tailored to help businesses grow,
+          scale, and succeed in a digital-first world. From custom web and app
+          development to cloud integration and maintenance, our services are
+          built for performance and reliability. We combine cutting-edge
+          technology with strategic thinking to solve complex challenges
+          efficiently. Partner with us to transform your ideas into powerful
+          digital experiences.
         </p>
 
         <motion.div

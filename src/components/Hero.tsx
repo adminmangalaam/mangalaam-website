@@ -1,30 +1,30 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import sliderImage1 from "../assets/tech-solutions-desktop.jpg";
+import sliderImage2 from "../assets/digital-transformation-desktop.jpg";
+import sliderImage3 from "../assets/innovative-it-solutions-desktop.jpg";
 
 export default function Hero() {
   const sliderData = [
     {
       smallTitle: "We Provide",
       mainTitle: "TECH SOLUTIONS",
-      sliderImage:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop",
+      sliderImage: sliderImage1,
       description:
         "Provide innovative technology solutions for your business growth and digital transformation",
     },
     {
       smallTitle: "Innovate with Us",
       mainTitle: "DIGITAL TRANSFORMATION",
-      sliderImage:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop",
+      sliderImage: sliderImage2,
       description:
         "Empowering your business with cutting-edge digital transformation services",
     },
     {
       smallTitle: "Grow Your Business",
       mainTitle: "INNOVATIVE IT SOLUTIONS",
-      sliderImage:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop",
+      sliderImage: sliderImage3,
       description:
         "Unlock your business potential with our innovative IT solutions tailored for growth",
     },
@@ -72,9 +72,6 @@ export default function Hero() {
                       {sliderItem.description}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <button className="bg-gold text-dark px-8 py-3 rounded font-semibold hover:bg-yellow-400 transition">
-                        Get Started
-                      </button>
                       <Link
                         to="/services"
                         className="border-2 border-gold text-gold px-8 py-3 rounded font-semibold hover:bg-gold hover:text-dark transition"

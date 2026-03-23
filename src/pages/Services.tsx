@@ -78,7 +78,7 @@ export default function ServicesPage() {
 
   return (
     <div>
-      <div className="text-white py-16 relative">
+      <div className="py-16 relative">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div
             className="absolute top-0 left-0 w-full h-full z-1"
@@ -111,7 +111,7 @@ export default function ServicesPage() {
                     <img
                       src={service.icon}
                       alt={service.name}
-                      className="w-16 h-16"
+                      className="w-10 h-10 md:w-16 md:h-16"
                     />
                     <h3 className="text-xl md:text-2xl font-bold">
                       {service.name}

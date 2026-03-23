@@ -1,19 +1,19 @@
+import user from "../assets/user.png";
+
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      company: "Tech StartUp Inc",
+      name: "Vrushali Patil",
+      company: "Photographer",
       text: "The team provided excellent support during our website redesign. Their attention to detail and quick turnaround time made all the difference.",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      image: user,
       rating: 5,
     },
     {
-      name: "John Anderson",
-      company: "Digital Solutions Ltd",
+      name: "Jayant Hadkar",
+      company: "Tech StartUp",
       text: "Outstanding service and technical expertise. They understood our requirements perfectly and delivered beyond expectations.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      image: user,
       rating: 5,
     },
   ];

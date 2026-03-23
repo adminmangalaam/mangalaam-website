@@ -40,7 +40,7 @@ export default function Contact() {
 
   return (
     <div>
-      <div className="text-white py-16 relative">
+      <div className="py-16 relative">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div
             className="absolute top-0 left-0 w-full h-full z-1"

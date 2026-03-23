@@ -69,15 +69,15 @@ export default function Footer() {
             >
               admin@mangalaam.co.in
             </a>
-            <p className="text-gray-400">+91 9545905268</p>
+            <p className="text-gray-400">+91 918856078956</p>
           </div>
         </div>
 
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>&copy; 2026 Mangalaam. All rights reserved.</p>
           <p className="text-[12px] mt-5 text-gray-500">
-            Designed & developed by{" "}
-            <span className="text-gold">an-IT-MONK</span>
+            designed & developed by
+            <span className="text-gold pl-1">an-IT-MONK</span>
           </p>
         </div>
       </div>
