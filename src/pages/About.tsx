@@ -28,10 +28,18 @@ export default function About() {
 
   return (
     <div>
-      <div className="bg-dark text-white py-16">
+      <div className="py-16 relative">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-4">About Mangalaam Global</h1>
-          <p className="text-gray-400 text-lg">
+          <div
+            className="absolute top-0 left-0 w-full h-full z-1"
+            style={{
+              backgroundImage: `linear-gradient(to bottom,rgb(253, 185, 19), transparent )`,
+            }}
+          />
+          <h1 className="text-black text-5xl font-bold mb-4 relative z-2">
+            About Mangalaam Global
+          </h1>
+          <p className="text-gray-500 text-lg relative z-2">
             Leading provider of IT solutions since 2025
           </p>
         </div>

@@ -78,18 +78,22 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <button
-                className="md:hidden bg-gold text-dark px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition"
+              <a
+                href="tel:8856078956"
+                className="call-us md:hidden bg-gold px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition"
                 onClick={() => setIsMenuOpen(false)}
               >
-                GET A QUOTE
-              </button>
+                CALL US
+              </a>
             </li>
           </ul>
         </div>
-        <button className="hidden md:block bg-gold text-dark px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition">
-          GET A QUOTE
-        </button>
+        <a
+          href="tel:"
+          className="hidden md:block bg-gold text-dark px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition"
+        >
+          CALL US
+        </a>
       </nav>
     </header>
   );

@@ -22,7 +22,7 @@ export default function Features() {
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,9 +48,12 @@ export default function Features() {
                 </div>
               ))}
             </div>
-            <button className="bg-gold text-dark px-8 py-3 rounded font-semibold mt-8 hover:bg-yellow-400 transition">
-              Get Started Now
-            </button>
+            <a
+              href="tel:+918856078956"
+              className="inline-block bg-gold text-dark px-8 py-3 rounded font-semibold mt-8 hover:bg-yellow-400 transition"
+            >
+              Get Quote Now
+            </a>
           </motion.div>
 
           <motion.div

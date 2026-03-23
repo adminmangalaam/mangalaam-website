@@ -77,3 +77,12 @@
 .mobile-menu-list button {
   margin-top: 20px;
 }
+
+a.call-us {
+  color: #333;
+}
+@screen md {
+  a.call-us {
+    display: none;
+  }
+}
