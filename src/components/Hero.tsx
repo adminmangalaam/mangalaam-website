@@ -90,7 +90,7 @@ export default function Hero() {
       </div>
 
       {/* Vertical Navigation Bullets */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 right-4 flex flex-col gap-4">
+      <div className="absolute bottom-[40px] left-1/2 md:top-1/2 gap-[40px] transform -translate-x-1/2 md:-translate-y-1/2 md:right-4 flex md:flex-col md:-translate-x-0 z-10 md:translate-y-0 md:left-auto lg:gap-4">
         {sliderData.map((_, index) => (
           <button
             key={index}

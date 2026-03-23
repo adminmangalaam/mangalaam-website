@@ -62,7 +62,7 @@ export default function Services() {
         <h2 className="text-4xl font-bold text-center mb-4 text-[#00358d]">
           Our Services
         </h2>
-        <p className="text-center text-gray-500 mb-12 w-[600px] mx-auto">
+        <p className="text-center text-gray-500 mb-12 md:w-[600px] mx-auto">
           Comprehensive technology solutions tailored to your needs.
           Comprehensive technology solutions tailored to your needs.
           Comprehensive technology solutions tailored to your needs.
