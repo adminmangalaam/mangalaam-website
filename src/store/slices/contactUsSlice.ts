@@ -12,7 +12,9 @@ const initialState: contactUsStateTypes = {
   success: false,
 };
 
-const URL = import.meta.env.VITE_API_URL || "http://localhost:3005";
+const URL = import.meta.env.DEV
+  ? "http://localhost:3005"
+  : import.meta.env.VITE_API_URL;
 
 export const submitContactRequestAsync = createAsyncThunk(
   "contactUs/submitContactRequest",
@@ -30,6 +32,7 @@ export const submitContactRequestAsync = createAsyncThunk(
       },
       body: JSON.stringify(contactData),
     });
+    console.log("API response status:", response);
 
     if (!response.ok) {
       const errorData = await response.json();

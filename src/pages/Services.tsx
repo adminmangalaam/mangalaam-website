@@ -72,7 +72,6 @@ export default function ServicesPage() {
 
   const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(0);
   const handleToggle = (index: number) => {
-    console.log("Toggling service index:", index);
     setOpenServiceIndex(index === openServiceIndex ? null : index);
   };
 

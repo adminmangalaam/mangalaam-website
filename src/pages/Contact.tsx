@@ -34,8 +34,16 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Ensure captcha is completed
+    if (!captchaValue) {
+      alert("Please complete the captcha.");
+      return;
+    }
+
     await dispatch(submitContactRequestAsync({ ...formData, captchaValue }));
     setFormData({ name: "", email: "", subject: "", message: "" });
+    setCaptchaValue(null); // Reset captcha
   };
 
   return (
@@ -105,12 +113,6 @@ export default function Contact() {
 
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
-                {contactUsState.error && (
-                  <p className="text-red-500">{contactUsState.error}</p>
-                )}
-                {contactUsState.success && (
-                  <p className="text-green-500">Message sent successfully!</p>
-                )}
                 <div>
                   <label className="block font-semibold mb-2">Name</label>
                   <input
@@ -169,6 +171,7 @@ export default function Contact() {
                       : import.meta.env.VITE_SITE_KEY
                   }
                   onChange={handleCaptchaChange}
+                  theme="light"
                 />
 
                 <button
@@ -178,6 +181,13 @@ export default function Contact() {
                 >
                   {contactUsState.loading ? "Sending..." : "Send Message"}
                 </button>
+
+                {contactUsState.error && (
+                  <p className="text-red-500">{contactUsState.error}</p>
+                )}
+                {contactUsState.success && (
+                  <p className="text-green-500">Message sent successfully!</p>
+                )}
               </form>
             </div>
           </div>
