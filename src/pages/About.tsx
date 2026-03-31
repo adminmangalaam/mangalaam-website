@@ -1,28 +1,27 @@
+import maleImage from "../assets/male-candidate.png";
+import femaleImage from "../assets/female-candidate.png";
+
 export default function About() {
   const team = [
     {
-      name: "John Doe",
-      role: "CEO & Founder",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+      name: "Mrs. Mangal Kamble",
+      role: "Founder",
+      image: femaleImage,
     },
     {
-      name: "Sarah Johnson",
-      role: "Lead Developer",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop",
+      name: "Mr. Ramesh Kamble",
+      role: "Co-Founder",
+      image: maleImage,
     },
     {
-      name: "Mike Chen",
-      role: "Design Head",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop",
+      name: "Mr. Uttam Kamble",
+      role: "CEO",
+      image: maleImage,
     },
     {
-      name: "Emma Davis",
+      name: "Mrs. Anushri N",
       role: "Marketing Manager",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop",
+      image: femaleImage,
     },
   ];
 
