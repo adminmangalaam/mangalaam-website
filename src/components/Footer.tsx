@@ -69,7 +69,7 @@ export default function Footer() {
             >
               admin@mangalaam.co.in
             </a>
-            <p className="text-gray-400">+91 918856078956</p>
+            <p className="text-gray-400">+91 8856078956</p>
           </div>
         </div>
 
