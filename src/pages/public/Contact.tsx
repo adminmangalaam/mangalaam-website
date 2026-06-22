@@ -1,8 +1,8 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
-import { submitContactRequestAsync } from "../store/slices/contactUsSlice";
+import { submitContactRequestAsync } from "../../store/slices/contactUsSlice";
 import { useSelector, useDispatch } from "react-redux";
-import type { AppDispatch, RootState } from "../store";
+import type { AppDispatch, RootState } from "../../store";
 
 export default function Contact() {
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);

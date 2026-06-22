@@ -1,5 +1,5 @@
-import maleImage from "../assets/male-candidate.png";
-import femaleImage from "../assets/female-candidate.png";
+import maleImage from "../../assets/male-candidate.png";
+import femaleImage from "../../assets/female-candidate.png";
 
 export default function About() {
   const team = [
