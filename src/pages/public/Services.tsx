@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import webDevelopmentIcon from "../assets/web-development.png";
-import digitalMarketingIcon from "../assets/digital-marketing.png";
-import appAnalyticsIcon from "../assets/seo.png";
-import cloudSolutionsIcon from "../assets/cloud-solutions.png";
-import cyberSecurityIcon from "../assets/cyber-security.png";
+import webDevelopmentIcon from "../../assets/web-development.png";
+import digitalMarketingIcon from "../../assets/digital-marketing.png";
+import appAnalyticsIcon from "../../assets/seo.png";
+import cloudSolutionsIcon from "../../assets/cloud-solutions.png";
+import cyberSecurityIcon from "../../assets/cyber-security.png";
 
 export default function ServicesPage() {
   const services = [
