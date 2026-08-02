@@ -26,6 +26,24 @@ export default function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
+
+    if (name === "message" && value.length > 500) {
+      alert("Message cannot exceed 500 characters.");
+      return;
+    }
+    if (name === "subject" && value.length > 100) {
+      alert("Subject cannot exceed 100 characters.");
+      return;
+    }
+    if (name === "name" && value.length > 50) {
+      alert("Name cannot exceed 50 characters.");
+      return;
+    }
+    if (name === "email" && value.length > 100) {
+      alert("Email cannot exceed 100 characters.");
+      return;
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
